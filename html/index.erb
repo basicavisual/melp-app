@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <%= erb :_head %>
+  <body>
+    <%# all restaurants %>
+   <%= erb :_header %>
+    <% @top5.each do |restaurant| %>
+      <div class='restaurant-display-tile'>
+        <p> Restaurant id: <%= restaurant.id %> '<%= restaurant.name %>' rating '<%= restaurant.rating %>' </p>
+        <%= restaurant.contact.email %>
+      </div>
+    <% end %>
+     <%= erb :_header %>
+  </body>
+</html>
