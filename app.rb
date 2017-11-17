@@ -6,6 +6,7 @@ require 'json'
 
 set :bind, '127.0.0.1'
 set :port, 5000
+set :public_folder, File.expand_path('../public', __FILE__)
 set :views, settings.root + '/html'
 
 require 'data_mapper'
@@ -91,6 +92,8 @@ module Enumerable
     map {|obj| obj[key] }
   end
 end
+
+
 
 get('/') do
   @top5 = Restaurant.top_5
