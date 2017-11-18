@@ -6,7 +6,6 @@ gem 'datamapper', '~> 1.2'
 gem 'json', '~> 1.8', '>= 1.8.3'
 
 
-group :production do
-    gem "pg"
-    gem "dm-postgres-adapter", '~> 1.2'
-end
+
+gem "pg"
+gem "dm-postgres-adapter", '~> 1.2'
