@@ -1,10 +1,10 @@
 require 'sinatra'
-require 'json'
 
 set :bind, '127.0.0.1'
 set :public_folder, File.expand_path('../public', __FILE__)
 set :views, settings.root + '/html'
 
+require 'json'
 require 'data_mapper'
 
 
