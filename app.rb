@@ -1,9 +1,5 @@
-require 'bundler/setup'
-require 'rubygems'
 require 'sinatra'
 require 'json'
-Bundler.require
-
 
 set :bind, '127.0.0.1'
 set :public_folder, File.expand_path('../public', __FILE__)
