@@ -8,6 +8,12 @@ gem 'dm-postgres-adapter', '~> 1.2'
 gem 'rerun', '~> 0.11.0'
 gem 'json', '~> 1.8', '>= 1.8.3'
 
-group :development do
-  gem 'dm-sqlite-adapter', '~> 1.2'
+group :development, :test do
+    gem "sqlite3"
+    gem 'dm-sqlite-adapter', '~> 1.2'
+end
+
+group :production do
+    gem "pg"
+    gem "dm-postgres-adapter"
 end

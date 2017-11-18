@@ -11,13 +11,14 @@ set :views, settings.root + '/html'
 
 require 'data_mapper'
 
-# configure :development do
-DataMapper.setup(:default, 'sqlite:melp.db')
-# end
 
-# configure :production do
-#   DataMapper.setup(:default, 'postgres://user:password@hostname/melp')
-# end
+configure :development do
+  DataMapper.setup(:default, 'sqlite:melp.db')
+end
+
+configure :production do
+  DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_RED_URL'])
+end
 
 class Restaurant
   include DataMapper::Resource
