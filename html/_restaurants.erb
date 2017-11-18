@@ -1,0 +1,30 @@
+<div class="restaurant">
+    <div class="restaurant-pic">
+      <img src="img/5.png" alt="1">
+    </div>
+    <div class="restaurant-info">
+        <h2><%= restaurant.name %></h2>
+        <div class="rating">
+            <% restaurant.rating.times do |x| %>
+                  🟊
+            <% end %>
+            <% r = 5 - restaurant.rating
+            r.times do |x| %>
+              ☆
+            <% end %>
+        </div>
+    <p><%= restaurant.address.street %></p>
+    <p><%= restaurant.address.state %></p>
+    <div class="restaurant-buttons">
+      <form action="<%= restaurant.contact.site %>">
+        <input type="submit" value="Visita el sitio" />
+      </form>
+      <form action="<%= restaurant.contact.phone %>">
+        <input type="submit" value="Reserva una mesa" />
+      </form>
+      <form action="https://www.google.com.mx/maps/@<%= restaurant.address.location.lat %>,<%= restaurant.address.location.lng %>?hl=enAIzaSyCuHRRgswSt4G3pl3sWwDG1H4pwKh1TDFM">
+        <input type="submit" value="Cómo llegar" />
+      </form>
+    </div>
+  </div>
+</div>

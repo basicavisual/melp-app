@@ -39,6 +39,11 @@ class Restaurant
     g = all(:rating.gte => 4, :limit => 5)
     g.each { |x| puts @x }
   end
+
+  def self.search(query)
+    h = all(Restaurant.address.state.like => "%#{query}%")
+    h = h.each { |x| puts @x }
+  end
 end
 
 class Contact
@@ -99,4 +104,13 @@ get('/') do
   @top5 = Restaurant.top_5
 
   erb(:index, locals: { restaurants: @top5 })
+end
+
+
+get('/search') do
+  @searched = Restaurant.search(params[:query])
+
+  # @searched.search(params[:query])
+
+  erb(:search, locals: { restaurants: @searched })
 end

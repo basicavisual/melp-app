@@ -1,0 +1,25 @@
+<%= erb :_head %>
+
+<%= erb :_header %>
+<section class="main-content">
+  <section class="restaurants">
+
+    <div class="title">
+      <h1 class="the-title">Hola, Melper. Bienvenido a <span>Guadalajara</span>.</h1>
+      <p>Prepara tu boca para los mejores restaurantes.</p>
+    </div>
+
+
+      <% @h = @searched.each { |x| puts x }  %>
+      <% @h.each do |restaurant| %>
+          <%= erb :_restaurants, :layout => false, :locals => { :restaurant => restaurant } %>
+      <% end %>
+
+
+
+    </section>
+      <%= erb :_aside_articles %>
+</section>
+
+
+<%= erb :_footer %>
