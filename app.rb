@@ -8,13 +8,8 @@ require 'json'
 require 'data_mapper'
 
 
-configure :development do
-  DataMapper.setup(:default, 'sqlite:melp.db')
-end
 
-configure :production do
-  DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-end
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
 class Restaurant
   include DataMapper::Resource
