@@ -1,6 +1,5 @@
 require 'sinatra'
 
-set :bind, '127.0.0.1'
 set :public_folder, File.expand_path('../public', __FILE__)
 set :views, settings.root + '/html'
 
