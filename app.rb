@@ -1,7 +1,8 @@
-require 'rubygems'
 require 'bundler/setup'
+require 'rubygems'
 require 'sinatra'
 require 'json'
+Bundler.require
 
 
 set :bind, '127.0.0.1'
