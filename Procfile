@@ -1,1 +1,1 @@
-web: bundle exec rerun './app'
+web: bundle exec ruby app.rb -p $PORT
